@@ -6,8 +6,13 @@ fi
 
 if [ -e $1 ]
 then
-  rm $1
-  echo "$1 deleted successfully"
+  echo "are you sure? [y/n]"
+  read ans
+  if [ $ans = 'y' ]
+  then 
+    rm $1
+    echo "$1 deleted successfully"
+  fi
 else
   echo "No such file exists"
 fi
